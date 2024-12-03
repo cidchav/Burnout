@@ -1,1 +1,1 @@
-Hello! Welcome to "Burnout!"'s code. Please handle with care, and please don't get burned out :P
+Hello! Welcome to the code for "Burnout!". Please handle with care, and please don't get burned out :P
