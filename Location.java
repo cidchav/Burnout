@@ -1,4 +1,4 @@
-package burnout;
+package q2aa_tau_chavez_sevilla;
 import java.util.ArrayList;
 
 public class Location implements Interactive {
