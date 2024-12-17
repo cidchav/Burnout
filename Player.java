@@ -1,4 +1,4 @@
-package burnout;
+package q2aa_tau_chavez_sevilla;
 
 public class Player extends Student {
     private String specialty;
