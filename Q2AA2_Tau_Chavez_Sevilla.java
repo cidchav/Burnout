@@ -10,7 +10,7 @@ public class Q2AA2_Tau_Chavez_Sevilla{
         Location library = new Location("library");
         InteriorElement door = new InteriorElement("door","\nShould I go to the...");
         InteriorElement table = new InteriorElement("table","\nShould I...");
-        Player player = new Player("Sean", classroom, "study, rest, and socialize.", "Tau", "emotional", 10, 10, 10);
+        Player player = new Player("Sean", classroom, "study, rest, and socialize.", "Tau", "emotional", 7, 4, 6);
         boolean inspectMatch, locationMatch;
         
         do{
