@@ -3,8 +3,8 @@ package q2aa2_tau_chavez_sevilla;
 import java.util.ArrayList;
 
 public class InteriorElement implements Interactive{
-    private String name, dialogue;
-    protected static ArrayList<InteriorElement> interiorElementList = new ArrayList<InteriorElement>();
+    protected String name, dialogue;
+    private static ArrayList<InteriorElement> interiorElementList = new ArrayList<InteriorElement>();
     
     public InteriorElement(String name, String dialogue){
         this.name = name;
