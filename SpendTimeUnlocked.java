@@ -1,4 +1,4 @@
-package q2aa_tau_chavez_sevilla;
+package q2aa2_tau_chavez_sevilla;
 
 public interface SpendTimeUnlocked {
     public abstract void hangOut(Player player, int hours);  
