@@ -2,7 +2,7 @@ package q2aa2_tau_chavez_sevilla;
 
 import java.util.ArrayList;
 
-public abstract class InteriorElement implements Interactive{
+public class InteriorElement implements Interactive{
     protected String name, dialogue;
     private static ArrayList<InteriorElement> interiorElementList = new ArrayList<InteriorElement>();
     
