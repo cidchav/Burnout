@@ -1,78 +1,83 @@
-package q2aa_tau_chavez_sevilla;
+package q2aa2_tau_chavez_sevilla;
 
-public class Burnout {
+import java.util.Scanner;
 
-    public static void main(String[] args) {
+public class Q2AA2_Tau_Chavez_Sevilla{
+    public static void main(String[] args){
         Scanner sc = new Scanner(System.in);
         
-        int time = 1;
-        String period;
-        
-        if(time>=1 || time<=2){
-            period = "Morning";
-        }
-        else if(time>=3 || time<=4){
-            period = "Afternoon";
-        }
-        else if(time>=5 || time<=6){
-            period = "Night";
-        }
-        else if(time<=7 || time>=8){
-            period = "Midnight";
-        }
-        if(time==8){
-            time = 1;
-        }
-        
-        Location classroom = new Location("Classroom");
-        Location library = new Location("Library");
-        Player player = new Player("Sean", classroom, "Shawntuah.", "Tau", "being cool", 10, 10, 10);
-        boolean locationMatch;
+        Location classroom = new Location("classroom");
+        Location library = new Location("library");
+        InteriorElement door = new InteriorElement("door","\nShould I go to the...");
+        InteriorElement table = new InteriorElement("table","\nShould I...");
+        Player player = new Player("Sean", classroom, "Shawntuah.", "Tau", "being cool", 10, 10, 10); //necessary?
+        boolean inspectMatch, locationMatch;
         
         do{
-            locationMatch = false;
+            System.out.println("Should I inspect the...\n> door?\n> table?");
+            String inspectInput = sc.nextLine();
+            inspectMatch = false;
             
-            System.out.println("Location: " + player.getLocation().getName());
-            System.out.println("Where should I spend my time?");
-            System.out.println("> Classroom");
-            System.out.println("> Library");
-            String locationInput = sc.nextLine();
+            try{
+                if(door.getName().equals(inspectInput)){
+                    inspectMatch = true;
+                    do{
+                        locationMatch = false;
+                        player.inspect(door);
+                        System.out.println("> classroom?");
+                        System.out.println("> library?");
+                        String locationInput = sc.nextLine();
 
-            try {
-                for (Location l : Location.locationList) {
-                    if (l.getName().equals(locationInput)) {
-                        locationMatch = true;
-                    }
-                    if(locationMatch == true){
-                        break;
-                    }
-                }
-                if(locationMatch == false){
-                    throw new UnknownLocationException("That is not a location." + '\n'); 
-                }
-            }
-            catch(UnknownLocationException ule){
-                System.out.println(ule.getMessage());
-            }
+                        try{
+                            for(Location l : Location.locationList){
+                                if(l.getName().equals(locationInput)){
+                                    locationMatch = true;
+                                }
+                                if(locationMatch == true){
+                                    break;
+                                }
+                            }
+                            if(locationMatch == false){
+                                throw new UnknownLocationException("Where is that?"); 
+                            }
+                        }
+                        catch(UnknownLocationException unknownLocationException) {
+                            System.out.println(unknownLocationException.getMessage());
+                        }
 
-            try {
-                if(locationInput.equals(player.getLocation().getName())){
-                    locationMatch = false;
-                    throw new SameLocationException("You're already in the " + player.getLocation().getName() + ".\n");
+                        try{
+                            if(locationInput.equals(player.getLocation().getName())) {
+                                locationMatch = false;
+                                throw new SameLocationException("I'm already in the " + player.getLocation().getName() + ".");
+                            }
+                        }
+                        catch(SameLocationException sameLocationException) {
+                            System.out.println(sameLocationException.getMessage());
+                        }
+
+                        switch(locationInput) {
+                            case "classroom":
+                                player.setLocation(classroom);
+                                break;    
+                            case "library":
+                                player.setLocation(library);
+                                break;  
+                        }
+                    }while(locationMatch == false);
+                } 
+                else if(table.getName().equals(inspectInput)){
+                    inspectMatch = true;
+                    player.inspect(table); 
+                    System.out.println("1) chow down?\n2) hit the books?\n3) catch some Z's?");
+                    String actionInput = sc.nextLine();                           
+                }
+                else{
+                    throw new UnknownInspectException("What is that?\n");
                 }
             }
-            catch(SameLocationException sle){
-                System.out.println(sle.getMessage());
+            catch(UnknownInspectException unknownInspectException){
+                System.out.println(unknownInspectException.getMessage());
             }
-
-            switch(locationInput){
-                case "Classroom":
-                    player.setLocation(classroom);
-                    break;    
-                case "Library":
-                    player.setLocation(library);
-                    break;  
-            }
-        }while(locationMatch == false);
-    }
+        }while(inspectMatch==false);
+    }   
 }
