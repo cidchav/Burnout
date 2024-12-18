@@ -3,7 +3,6 @@ package q2aa_tau_chavez_sevilla;
 public class Player extends Student {
     private String specialty;
     private int mentalHP, physicalHP, emotionalHP;
-    private InteriorElement interiorElement;
     
     public Player(String name, Location location, String dialogue, String section, 
             String specialty, int mentalHP, int physicalHP, int emotionalHP){
