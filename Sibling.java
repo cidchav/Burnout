@@ -1,4 +1,4 @@
-package q2aa_tau_chavez_sevilla;
+package q2aa2_tau_chavez_sevilla;
 
 public class Sibling extends FamilyMember{
     public Sibling(String name, Location location, String dialogue){
