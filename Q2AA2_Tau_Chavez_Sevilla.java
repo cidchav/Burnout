@@ -29,8 +29,8 @@ public class Q2AA2_Tau_Chavez_Sevilla{
                         String locationInput = sc.nextLine();
 
                         try{
-                            for(Location l : Location.locationList){
-                                if(l.getName().equals(locationInput)){
+                            for(Location location : player.getLocation().locationList){
+                                if(location.getName().equals(locationInput)){
                                     locationMatch = true;
                                 }
                                 if(locationMatch == true){
