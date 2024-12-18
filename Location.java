@@ -5,12 +5,12 @@ import java.util.ArrayList;
 public class Location implements Interactive{
     private String name, activity;
     private ArrayList<Person> peopleList;
-    protected static ArrayList<Location> locationList = new ArrayList<Location>();
+    private static ArrayList<Location> locationList = new ArrayList<Location>();
     
-    public Location(String name){ //, String activity
+    public Location(String name, String activity){
         this.name = name;
         locationList.add(this);
-        //this.activity = activity;
+        this.activity = activity;
     } 
     public String getName() {
         return name;
