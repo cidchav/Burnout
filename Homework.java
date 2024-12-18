@@ -1,25 +1,24 @@
-package q2aa_tau_chavez_sevilla;
+package q2aa2_tau_chavez_sevilla;
 
-public class Homework extends Requirement {
+public class Homework extends Requirement{
     int hours, maxHours;
     
     public Homework(String name, String subject, int maxScore, int maxHours){
         super(name,subject,maxScore);
         this.maxHours = maxHours;
-        
         hours = 0;
         score = 0;
     }
     
-    public int getHours() {
+    public int getHours(){
         return hours;
     }
-
-    public int getMaxHours() {
+    
+    public int getMaxHours(){
         return maxHours;
     }
     
-    public void setHours(int hours) {
+    public void setHours(int hours){
         this.hours = hours;
     }
     
