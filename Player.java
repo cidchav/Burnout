@@ -11,7 +11,7 @@ public class Player extends Student {
         this.physicalHP = physicalHP;
         this.emotionalHP = emotionalHP;
     }
-    
+       
     public String getSpecialty() {
         return specialty;
     }
@@ -50,9 +50,9 @@ public class Player extends Student {
         mentalHP =+ hours;
     }
     
-    @Override
+    /*@Override
     public void takeTest(Test test){
         super.takeTest(test);
         //INSERT CASE 3 HERE!
-    }
+    }*/
 }
