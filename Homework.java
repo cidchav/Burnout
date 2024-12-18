@@ -1,7 +1,7 @@
 package q2aa2_tau_chavez_sevilla;
 
 public class Homework extends Requirement{
-    int hours, maxHours;
+    private int hours, maxHours;
     
     public Homework(String name, String subject, int maxScore, int maxHours){
         super(name,subject,maxScore);
