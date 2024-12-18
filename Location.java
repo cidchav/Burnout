@@ -21,6 +21,11 @@ public class Location implements Interactive{
     public ArrayList<Person> getPeopleList() {
         return peopleList;
     }
+
+    public static ArrayList<Location> getLocationList() {
+        return locationList;
+    }
+    
     public void addPerson(Person person){
         getPeopleList().add(person);
     }
